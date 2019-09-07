@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'icon_text.dart';
 import '../screens/meal_detail_screen.dart';
 import '../models/meal.dart';
 import '../utilities/enum_util.dart';
@@ -75,33 +76,9 @@ class MealItem extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Row(
-                    children: [
-                      Icon(Icons.schedule),
-                      SizedBox(
-                        width: 6,
-                      ),
-                      Text('$duration mins')
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Icon(Icons.work),
-                      SizedBox(
-                        width: 6,
-                      ),
-                      Text('${EnumUtil.ToString(complexity)}')
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Icon(Icons.attach_money),
-                      SizedBox(
-                        width: 6,
-                      ),
-                      Text('${EnumUtil.ToString(affordability)}')
-                    ],
-                  ),
+                  IconText(Icons.schedule, '$duration mins'),
+                  IconText(Icons.work, '${EnumUtil.ToString(complexity)}'),
+                  IconText(Icons.attach_money, '${EnumUtil.ToString(affordability)}'),
                 ],
               ),
             )
